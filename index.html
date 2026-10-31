@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo interativo de pedra, papel e tesoura.">
+  <title>Jokenpô - Pedra, Papel e Tesoura</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+</head>
+<body>
+  <main class="game">
+    <header class="game__header">
+      <p class="eyebrow">DESAFIO RÁPIDO</p>
+      <h1>Pedra, papel ou tesoura</h1>
+      <p>Escolha sua jogada e tente vencer o computador.</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Placar">
+      <div class="score">
+        <span class="score__label">VOCÊ</span>
+        <strong id="player-score">0</strong>
+      </div>
+      <div class="scoreboard__separator">:</div>
+      <div class="score">
+        <span class="score__label">COMPUTADOR</span>
+        <strong id="computer-score">0</strong>
+      </div>
+    </section>
+
+    <section class="choices" aria-label="Escolha sua jogada">
+      <button class="choice" type="button" data-choice="pedra" aria-label="Escolher pedra">
+        <span class="choice__emoji" aria-hidden="true">✊</span>
+        <span>Pedra</span>
+      </button>
+      <button class="choice" type="button" data-choice="papel" aria-label="Escolher papel">
+        <span class="choice__emoji" aria-hidden="true">✋</span>
+        <span>Papel</span>
+      </button>
+      <button class="choice" type="button" data-choice="tesoura" aria-label="Escolher tesoura">
+        <span class="choice__emoji" aria-hidden="true">✌️</span>
+        <span>Tesoura</span>
+      </button>
+    </section>
+
+    <section class="round" aria-live="polite" aria-atomic="true">
+      <div class="round__plays">
+        <div>
+          <span class="round__caption">SUA JOGADA</span>
+          <strong id="player-play">?</strong>
+        </div>
+        <div class="round__versus">VS</div>
+        <div>
+          <span class="round__caption">COMPUTADOR</span>
+          <strong id="computer-play">?</strong>
+        </div>
+      </div>
+      <h2 id="result">Faça sua escolha!</h2>
+      <p id="result-message">A primeira rodada está esperando por você.</p>
+    </section>
+
+    <button class="reset-button" id="reset-button" type="button">
+      Reiniciar partida
+    </button>
+
+    <p class="hint">
+      Dica: pedra vence tesoura, papel vence pedra e tesoura vence papel.
+    </p>
+  </main>
+</body>
+</html>
